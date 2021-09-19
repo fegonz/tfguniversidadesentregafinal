@@ -1,0 +1,69 @@
+<div class="p-4"></div>
+</div>
+
+<!-- Frase principal-->
+<div class="container">
+  <h1 class="text-center mt-4">¿Qué quieres buscar?</h1>
+   <h4 class="text-center mt-4">Máster o Grado</h4>
+</div>
+<!-- Container y Row buscadores-->
+<div class="container">
+<div class="row">
+  <div class="col-lg-6 col-md-2 col-sm-12">
+    <!--card1 -->
+<div class="card text-center">
+  <div class="card-header">
+    Másteres
+  </div>
+   <div class="card-body">
+    <div class="fa fa-user-graduate"></div>
+    <h5 class="card-title"><%= Master.count%></h5>
+    <p class="card-text">Másteres registrados</p>
+    
+  </div>
+  <div class="card-body">
+    <div class="fa fa-user-graduate"></div>
+    <h5 class="card-title"><%= AsignaturaMaster.count%></h5>
+    <p class="card-text">Asignaturas de Máster registradas</p>
+    
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Buscar Master', static_pages_buscadorM_path, class: 'btn btn-outline-dark' %>
+    
+  </div>
+  
+  
+</div>
+<!--end card1 -->
+  </div>
+  <div class="col-lg-6 col-md-2 col-sm-12">
+ <!--card2 -->
+<div class="card text-center">
+  <div class="card-header">
+    Grados
+  </div>
+  <div class="card-body">
+    <div class="fa fa-chalkboard-teacher"></div>
+    <h5 class="card-title"><%= Grado.count%></h5>
+    <p class="card-text">Grados registrados</p>
+   
+  </div>
+  <div class="card-body">
+    <div class="fa fa-chalkboard-teacher"></div>
+    <h5 class="card-title"><%= Asignatura.count%></h5>
+    <p class="card-text"> Asignaturas de Grados registradas</p>
+   
+  </div>
+
+  <div class="card-footer">
+    
+    <%= link_to 'Buscar Grado', static_pages_buscadorG_path, class: 'btn btn-outline-dark' %>
+   
+  </div>
+
+
+  
+</div>
+<!--end card2 -->
+</div>
+

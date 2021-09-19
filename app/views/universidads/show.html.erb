@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Comunidad</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Url</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Grados</th>
+      <th scope="col">Asignaturas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td><%= @universidad.id %></td>
+      <td><%= @universidad.comunidad.nombre %></td>
+      <td><%= @universidad.nombre %></td>
+
+      <td><a href="<%= @universidad.url %>"><%= @universidad.url %></td>
+      <td><%= @universidad.tipo %></td>
+      <td><%=  @grados.count %></td>
+      <td><%= @numeroAsignaturas %></td>
+
+      
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Universidad</th>
+      <th scope="col">Nombre Grado</th>
+      <th scope="col">Url</th>
+      <th scope="col">Numero de Asignaturas</th>
+      <th scope="col">Ver</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Borrar</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+     <% @grados.each do |grado| %>
+    <tr>
+      
+      <td><%= grado.id %></td>
+      <td><%= grado.universidad.nombre %></td>
+      <td><%= grado.nombre %></td>
+      <td><a href="<%= grado.url %>"><%= grado.url %></td>
+      <td><%= devolver_numero_asignaturas(grado.id).count %></td>
+      <td><%= link_to 'Show', grado,class: 'btn btn-outline-primary'  %></td>
+      <td><%= link_to 'Edit', edit_grado_path(grado),class: 'btn btn-outline-success'  %></td>
+      <td><%= link_to 'Destroy', grado, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-warning'  %></td>
+
+      
+    </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_universidad_path(@universidad) %> |
+<%= link_to 'Back', universidads_path %>

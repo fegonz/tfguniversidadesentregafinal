@@ -1,0 +1,22 @@
+
+
+
+   <div class="card  ">
+   <div class="card-header h-100">
+       <strong>Nombre de la asignatura: </strong> <%= asignaturaMaster.nombre %>
+   
+    
+    </div>
+    
+    <div class="card-body h-100">
+      <h5 class="card-title"><strong>   Nombre del máster: </strong><%= asignaturaMaster.master.nombre %></h5>
+          <p>Este máster es de la <b><%= asignaturaMaster.master.universidad.nombre%></b> que es una universidad: </p>
+    <p class="fas fa-dollar-sign">  <%=asignaturaMaster.master.universidad.tipo%> </p>
+    <p> <strong>Web oficial: </strong> <a href="<%= asignaturaMaster.master.url %>"><%= asignaturaMaster.master.url %></a>
+    </div>
+    <div class="card-footer h-100">
+      <small class="text-muted"><h6>Información adicional de la asignatura: </h6>
+  <p><b>Tipo </b>: <%= asignaturaMaster.tipo%></p>
+   <p><b>Créditos: </b><%= asignaturaMaster.creditos%></p></small>
+    </div>
+  </div>

@@ -1,0 +1,30 @@
+<div class="card-columns">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Comunidad</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Url</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Grados</th>
+      <th scope="col">Másteres</th>
+      <th scope="col">Mostrar Universidad</th>
+      
+      <th scope="col">Scrape</th>
+      <th scope="col">ScrapeMaster</th>
+      <th scope="col">Borrar Grados asociados</th>
+      <th scope="col">Borrar Másteres asociados</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  
+  <tr><% @universidads.each do |universidad| %>
+    <%= render 'universidads/universidades', universidad: universidad %>
+  <% end %>
+  <%= link_to 'Añadir Universidad', new_universidad_path %>
+  </tr>
+</div>
+
+

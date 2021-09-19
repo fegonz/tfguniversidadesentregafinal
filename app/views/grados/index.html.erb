@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Url</th>
+      <th>Universidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grados.each do |grado| %>
+      <tr>
+        <td><%= grado.nombre %></td>
+        <td><a href="<%= grado.url %>"><%= grado.url %></td>
+        <td><%= grado.universidad.nombre %></td>
+        <td><%= link_to 'Show', grado %></td>
+        <td><%= link_to 'Edit', edit_grado_path(grado) %></td>
+        <td><%= link_to 'Destroy', grado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grado', new_grado_path %>

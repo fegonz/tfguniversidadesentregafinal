@@ -1,0 +1,116 @@
+<div class="p-4"></div>
+</div>
+
+<!-- Frase principal-->
+<div class="container">
+  <h1 class="text-center mt-4">¿Qué máster quieres buscar?</h1>
+   
+</div>
+<!-- Container y Row buscadores-->
+
+
+<div class="container">
+  <div class="row justify-content-center" >
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+      <!--select1-->
+      <%= form_tag("/static_pages/buscadorMaster", method: "get") do %>
+  <%= label_tag(:publica_privada, "Seleccione tipo Universidad:") %>
+    <select name="publica_privada">
+    <option value=""></option>
+    <%= @universidades.each do |univerisdad| %>
+      <option value="<%= univerisdad.id %>"><%= univerisdad.nombre %></option>
+    <% end %>
+  </select>
+
+  <%= label_tag(:nombre, "Buscar grado:") %>
+  <%= text_field_tag :nombre,  nil, :required => true  %>
+ 
+<!-- Buscadores-->
+  
+  <%= button_to "Buscar",  {class: 'btn btn-outline-primary'} %>
+<% end %>
+
+
+<!-- Buscadores-->
+
+</div>
+</div>
+
+<!-- Container y Row buscadores-->
+<!-- Espacio-->
+<div class="p-4"></div>
+<!-- Espacio-->
+<div class="album py-5 bg-light"></div>
+<!-- Container y Row grados-->
+<div class="container">
+<div class="row">
+  <div class="col-lg-4 col-md-2 col-sm-12">
+    <!--card1 -->
+<div class="card text-center">
+  <div class="card-header">
+    Universidades
+  </div>
+   <div class="card-body">
+    <div class="fa fa-user-graduate"></div>
+    <h5 class="card-title"><%= Comunidad.count%></h5>
+    <p class="card-text">Comunidades Autónomas registradas</p>
+    
+  </div>
+  <div class="card-footer">
+    <div class="fa fa-graduation-cap"></div>
+    <h5 class="card-title"><%= Universidad.count%></h5>
+    <p class="card-text">Universidades registradas</p>
+   
+  </div>
+  
+</div>
+<!--end card1 -->
+  </div>
+  <div class="col-lg-4 col-md-2 col-sm-12">
+ <!--card2 -->
+<div class="card text-center">
+  <div class="card-header">
+    Grados
+  </div>
+  <div class="card-body">
+    <div class="fa fa-chalkboard-teacher"></div>
+    <h5 class="card-title"><%= Grado.count%></h5>
+    <p class="card-text">Grados registrados</p>
+   
+  </div>
+  <div class="card-footer">
+    <div class="fa fa-user-graduate"></div>
+    <h5 class="card-title"><%= Asignatura.count%></h5>
+    <p class="card-text">Asignatra grado registradas</p>
+    
+  </div>
+  
+</div>
+<!--end card2 -->
+</div>
+<div class="col-lg-4 col-md-2 col-sm-12">
+<!--card3 -->
+<div class="card text-center ">
+  <div class="card-header">
+    Masters
+  </div>
+  <div class="card-body">
+    <div class="fa fa-user-graduate"></div>
+    <h5 class="card-title"><%= Master.count%></h5>
+    <p class="card-text">master registrados</p>
+    
+  </div>
+  <div class="card-footer">
+    <div class="fa fa-user-graduate"></div>
+    <h5 class="card-title"><%= AsignaturaMaster.count%></h5>
+    <p class="card-text">Asignatra master registradas</p>
+    
+  </div>
+  
+</div>
+<!--end card3 -->
+</div>
+</div>
+</div>
+<!-- Container y Row grados-->
+</div>

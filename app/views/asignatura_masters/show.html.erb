@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @asignatura_master.nombre %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @asignatura_master.curso %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @asignatura_master.tipo %>
+</p>
+
+<p>
+  <strong>Creditos:</strong>
+  <%= @asignatura_master.creditos %>
+</p>
+
+<p>
+  <strong>Master:</strong>
+  <%= @asignatura_master.master_id %>
+</p>
+
+<%= link_to 'Edit', edit_asignatura_master_path(@asignatura_master) %> |
+<%= link_to 'Back', asignatura_masters_path %>

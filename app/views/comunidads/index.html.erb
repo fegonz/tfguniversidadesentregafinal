@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comunidades Autónomas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Scrape</th>
+      <th>Universidades</th>
+      <th>Grados</th>
+      <th>Másteres</th>
+      <th>Borrar</th>
+  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comunidads.each do |comunidad| %>
+      <tr>
+        <td><%= comunidad.nombre %></td>
+   
+        <td><%= link_to 'Scrape', scrapear_comunidad_path((comunidad.id)) , class: 'btn btn-outline-success'   %></td>
+        <td><%= devolver_numero_universidades_comunidad(comunidad.id).count %></td>
+        <td><%= devolver_numero_grados_comunidad(comunidad.id)%></td>
+        <td><%= devolver_numero_masters_comunidad(comunidad.id) %></td>
+        <td><%= link_to 'Borrar Grados y Másteres', borrar_grados_y_masteres_comunidad_path(comunidad.id), class: 'btn btn-outline-danger'  %></td>
+
+      
+
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

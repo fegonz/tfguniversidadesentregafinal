@@ -1,0 +1,21 @@
+
+
+   <div class="card  ">
+   <div class="card-header h-100">
+       <strong>Nombre de la asignatura: </strong> <%= asignatura.nombre %>
+   
+    
+    </div>
+    
+    <div class="card-body h-100">
+      <h5 class="card-title"><strong>   Nombre del grado: </strong><%= asignatura.grado.nombre %></h5>
+          <p>Este grado es de la <b><%= asignatura.grado.universidad.nombre%></b> que es una universidad: </p>
+    <p class="fas fa-dollar-sign">  <%=asignatura.grado.universidad.tipo%> </p>
+    <p> <strong>Web oficial: </strong> <a href="<%= asignatura.grado.url %>"><%= asignatura.grado.url %></a>
+    </div>
+    <div class="card-footer h-100">
+      <small class="text-muted"><h6>Información adicional de la asignatura: </h6>
+  <p><b>Tipo </b>: <%= asignatura.tipo%></p>
+   <p><b>Créditos: </b><%= asignatura.creditos%></p></small>
+    </div>
+  </div>

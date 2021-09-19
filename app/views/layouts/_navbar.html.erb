@@ -1,0 +1,40 @@
+<header class="p-3 bg-dark text-white">
+
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a class="navbar-brand" rel="home" href="<%= root_path  %>" title="Universidad Complutense de Madrid">
+        <img style="max-width:100px; margin-top: -7px;"
+             src="<%= asset_path 'logo-ucm.png'%>">UNISURFING
+    </a>
+   
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <% if current_user && current_user.has_role?(:admin) %>
+      
+        
+        <li><%= link_to 'Comunidades', comunidads_path, :class=>"nav-link px-2 text-white"%></li>
+        <li><%= link_to 'Universidades', universidads_path	, :class=>"nav-link px-2 text-white"%></li>
+        <li><%= link_to 'Grados', grados_path, :class=>"nav-link px-2 text-white"%></li>
+        <li><%= link_to 'Masters', masters_path, :class=>"nav-link px-2 text-white"%></li>
+        <li><%= link_to 'Asignaturas', asignaturas_path, :class=>"nav-link px-2 text-white"%></li>
+        <li><%= link_to 'AsignaturasMaster', asignatura_masters_path, :class=>"nav-link px-2 text-white"%></li>
+        <%end%>
+      </ul>
+
+  
+
+      <div class="text-end">
+        
+        <% if current_user %>
+        <%= current_user.email %>
+        <%= link_to 'Account settings', edit_user_registration_path, :class=>"btn btn-outline-light me-2" %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete,   :class=>"btn btn-warning" %>
+        <% else %>
+        <%= link_to 'Sign Up', new_user_registration_path, :class=>"btn btn-warning"%>
+        <%= link_to 'Log In', new_user_session_path, :class=>"btn btn-outline-light me-2"  %>
+        <% end %>
+ 
+      </div>
+    </div>
+  </div>
+</header>

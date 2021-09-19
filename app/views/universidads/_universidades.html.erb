@@ -1,0 +1,19 @@
+
+    <tr>
+      
+      <td><%= universidad.id %></td>
+      <td><%= universidad.comunidad.nombre %></td>
+      <td><%= universidad.nombre %></td>
+      <td><a href="<%= universidad.url %>"><%= universidad.url %></td>
+      <td><%= universidad.tipo %></td>
+      <td><%= devolver_numero_grados(universidad.id).count%></td>
+      <td><%= devolver_numero_masters(universidad.id).count%></td>
+      <td><%= link_to 'Show', universidad, class: 'btn btn-outline-primary' %></td>
+
+    <td><%= link_to 'Scrape', universidads_scrape_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'ScrapeMaster', universidads_scrapeMaster_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'BorrarGrados', grados_borrar_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'BorrarMaster', borrar_masters_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+      
+    </tr>
+  

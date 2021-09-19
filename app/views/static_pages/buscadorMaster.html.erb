@@ -1,0 +1,43 @@
+<div class="p-4"></div>
+</div>
+
+<!-- Frase principal-->
+<div class="container">
+  <h1 class="text-center mt-4">¿Qué máster quieres buscar?</h1>
+</div>
+<!-- Container y Row buscadores-->
+
+<div class="container">
+  <div class="row justify-content-center" >
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+      <!--select1-->
+      <%= form_tag("/static_pages/buscadorMaster", method: "get") do %>
+  <%= label_tag(:publica_privada, "Seleccione tipo Universidad:") %>
+    <select name="publica_privada">
+    <option value=""></option>
+    <%= @universidades.each do |univerisdad| %>
+      <option value="<%= univerisdad.id %>"><%= univerisdad.nombre %></option>
+    <% end %>
+  </select>
+
+  <%= label_tag(:nombre, "Buscar grado:") %>
+  <%= text_field_tag :nombre,  nil, :required => true  %>
+ 
+<!-- Buscadores-->
+  
+  <%= button_to "Buscar",  {class: 'btn btn-outline-primary'} %>
+<% end %>
+</div>
+</div>
+<!-- Container y Row buscadores-->
+<!-- Espacio-->
+<div class="p-4"></div>
+<!-- Espacio-->
+<div class="p-4"><h3><%= @asignaturasMaster.count  %> Masters encontrados con la asignatura que contenga <%= @nombre_asig  %></h3></div>
+<div class="row row-cols-1 row-cols-md-3">
+  <% @asignaturasMaster.each do |asignaturaMaster| %>
+    <%= render 'static_pages/masters_asignaturas', asignaturaMaster: asignaturaMaster %>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @grado.nombre %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @grado.url %>
+</p>
+
+<p>
+  <strong>Universidad:</strong>
+  <%= @grado.universidad.nombre %>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Universidad</th>
+      <th scope="col">Nombre Grado</th>
+      <th scope="col">Url</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Créditos</th>
+    
+
+  
+    </tr>
+  </thead>
+  <tbody>
+     <% @asignaturas.each do |asignatura| %>
+    <tr>
+      
+      <td><%= asignatura.id %></td>
+      <td><%= asignatura.grado.universidad.nombre %></td>
+      <td><%= asignatura.nombre %></td>
+      <td><a href="<%= asignatura.grado.url %>"><%= asignatura.grado.url %></td>
+      <td><%= asignatura.tipo %></td>
+      <td><%= asignatura.creditos %></td>
+
+
+      
+    </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_grado_path(@grado) %> |
+<%= link_to 'Back', grados_path %>
