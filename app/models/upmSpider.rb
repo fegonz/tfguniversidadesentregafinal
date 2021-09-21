@@ -127,6 +127,26 @@ class UpmSpider < Kimurai::Base
                
                 data_asignatura= {}
                 parse_url(response,data_asignatura,grado, urlgrado)
+                nombre_del_grado=grado.nombre
+                universidad_del_grado=grado.universidad.id
+                id_grado=grado.id
+                grados= Grado.where(["nombre = :nombre and universidad_id = :universidad_id", { nombre: nombre_del_grado, universidad_id: universidad_del_grado }])
+
+                if grados.count>1
+
+                    grados.each do|grados_a_borrar|
+                    id_del_grado=grados_a_borrar.id
+
+                    if id_del_grado != id_grado
+                          resultado2=Grado.destroy_by("id= ?", id_del_grado)
+
+                    end
+
+                end
+
+end
+
+
 
                end
                

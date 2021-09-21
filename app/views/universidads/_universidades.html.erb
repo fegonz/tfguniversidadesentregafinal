@@ -10,10 +10,10 @@
       <td><%= devolver_numero_masters(universidad.id).count%></td>
       <td><%= link_to 'Show', universidad, class: 'btn btn-outline-primary' %></td>
 
-    <td><%= link_to 'Scrape', universidads_scrape_path(universidad.id), class: 'btn btn-outline-success'  %></td>
-    <td><%= link_to 'ScrapeMaster', universidads_scrapeMaster_path(universidad.id), class: 'btn btn-outline-success'  %></td>
-    <td><%= link_to 'BorrarGrados', grados_borrar_path(universidad.id), class: 'btn btn-outline-success'  %></td>
-    <td><%= link_to 'BorrarMaster', borrar_masters_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'Scrape grados', universidads_scrape_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'Scrape másteres', universidads_scrapeMaster_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'Borrar grados', grados_borrar_path(universidad.id), class: 'btn btn-outline-success'  %></td>
+    <td><%= link_to 'Borrar másteres', borrar_masters_path(universidad.id), class: 'btn btn-outline-success'  %></td>
       
     </tr>
   

@@ -30,9 +30,7 @@ gem 'thinking-sphinx', '~> 5.3'
 gem "pundit"
 gem "rolify"
 gem 'pdf-reader', '~> 2.5'
-gem 'pdf2html_docker'
-gem 'kristin', '~> 0.4.1'
-  gem 'pagy', '~> 3.5'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

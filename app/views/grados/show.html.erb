@@ -20,7 +20,8 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Universidad</th>
-      <th scope="col">Nombre Grado</th>
+       <th scope="col">Nombre Grado</th>
+      <th scope="col">Nombre Asignatura</th>
       <th scope="col">Url</th>
       <th scope="col">Tipo</th>
       <th scope="col">Créditos</th>
@@ -35,6 +36,7 @@
       
       <td><%= asignatura.id %></td>
       <td><%= asignatura.grado.universidad.nombre %></td>
+      <td><%= asignatura.grado.nombre %></td>
       <td><%= asignatura.nombre %></td>
       <td><a href="<%= asignatura.grado.url %>"><%= asignatura.grado.url %></td>
       <td><%= asignatura.tipo %></td>

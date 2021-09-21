@@ -66,7 +66,7 @@ class UniversidadsController < ApplicationController
 
     when "Universidad Rey Juan Carlos"
 
-    
+    when "Universidad Complutense de Madrid"
       
     end
     
@@ -89,7 +89,7 @@ class UniversidadsController < ApplicationController
     
     universidad= Universidad.find(params[:idUniversidad])
     nombre_universidad= universidad.nombre
-
+    
     url = universidad.url
     idUniversidad= universidad.id
 
@@ -128,7 +128,8 @@ class UniversidadsController < ApplicationController
     when "Universidad Politécnica de Madrid"
       
       response = UpmSpider.process(url,universidad)
-    
+    when "Universidad Complutense de Madrid"
+      response = UcmSpider.process(url,universidad)
       
     end
 
@@ -220,8 +221,11 @@ class UniversidadsController < ApplicationController
       when "Universidad Politécnica de Madrid"
         
         response12 = UpmSpider.process(url,universidad)
-      
+      when "Universidad Complutense de Madrid"
+        response = UcmSpider.process(url,universidad)
         
+     
+  
       end
   
       gradosillos=Grado.destroy_by("nombre= ?", "")

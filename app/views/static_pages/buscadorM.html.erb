@@ -22,7 +22,7 @@
     <% end %>
   </select>
 
-  <%= label_tag(:nombre, "Buscar grado:") %>
+  <%= label_tag(:nombre, "Buscar máster:") %>
   <%= text_field_tag :nombre,  nil, :required => true  %>
  
 <!-- Buscadores-->
@@ -81,7 +81,7 @@
   <div class="card-footer">
     <div class="fa fa-user-graduate"></div>
     <h5 class="card-title"><%= Asignatura.count%></h5>
-    <p class="card-text">Asignatra grado registradas</p>
+    <p class="card-text">Asignaturas de grado registradas</p>
     
   </div>
   
@@ -92,18 +92,18 @@
 <!--card3 -->
 <div class="card text-center ">
   <div class="card-header">
-    Masters
+    Másteres
   </div>
   <div class="card-body">
     <div class="fa fa-user-graduate"></div>
     <h5 class="card-title"><%= Master.count%></h5>
-    <p class="card-text">master registrados</p>
+    <p class="card-text">Másteres registrados</p>
     
   </div>
   <div class="card-footer">
     <div class="fa fa-user-graduate"></div>
     <h5 class="card-title"><%= AsignaturaMaster.count%></h5>
-    <p class="card-text">Asignatra master registradas</p>
+    <p class="card-text">Asignaturas de máster registradas</p>
     
   </div>
   
